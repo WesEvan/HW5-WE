@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Work Day Scheduler</title>
+  </head>
+
+  <!-- Timeblocks go here -->
+  <body>
+ 
+    <header class="jumbotron">
+      <h1 class="display-3">Work Day Scheduler</h1>
+      <p class="lead">Calendar App to remind of your hourly</p>
+      <p id="currentDay" class="lead"></p>
+    </header>
+ 
+  
+    </div>
+
+    <div id="loop"></div>
+     
+    <script>
+
+    var x ="", z ="", i, n;
+    for (i=1; i<=11; i++) {
+      x = x + "<div id= \"hour" + i + "\" class =\"row time-block\" data-time=" + (i+8) + ">" +
+      "<div class=\"col-mid-1 hour\">" + i + "AM" + "</div>" +
+      "<textarea class = \"col-md-10 description\"></textarea>" +
+      "<button class = \"btn saveBtn col-md-1\">" +
+      "<i class = \"fas fa-archive\"></i>" +
+      "</button>" +
+      "</div>"
+    }
+    x = x + "<div id= \"hour" + 12 + "\" class =\"row time-block\" data-time=" + 20 + ">" +
+    "<div class=\"col-mid-1 hour\">" + 12 + "PM" + "</div>" +
+    "<textarea class = \"col-md-10 description\"></textarea>" +
+    "<button class = \"btn saveBtn col-md-1\">" +
+    "<i class = \"fas fa-archive\"></i>" +
+    "</button>" +
+    "</div>";
+
+    for (n=1; n<=11; n++) {
+    z = z + "<div id= \"hour" + n + "\" class =\"row time-block\" data-time=" + (n+8) + ">" +
+    "<div class=\"col-mid-1 hour\">" + n + "PM" + "</div>" +
+    "<textarea class = \"col-md-10 description\"></textarea>" +
+    "<button class = \"btn saveBtn col-md-1\">" +
+    "<i class = \"fas fa-archive\"></i>" +
+    "</button>" +
+    "</div>"
+    }
+    document.getElementById("loop").innerHTML = x;
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js./1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>
